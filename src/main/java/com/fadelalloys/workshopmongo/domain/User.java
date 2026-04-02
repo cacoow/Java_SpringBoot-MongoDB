@@ -5,7 +5,10 @@ import java.io.Serializable;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 @Document(collection="user")
+@JsonPropertyOrder({ "id", "name", "email" })
 //se nao colocar o nome no collection, ele usa o nome da classe
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
